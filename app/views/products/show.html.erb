@@ -1,0 +1,20 @@
+<h1>Show Product</h1>
+
+<h2>
+  <%= @product.title%>
+</h2>
+
+<div class="field">
+  <textarea><%= @product.description%></textarea>
+</div>
+
+<div class="field">
+  <%= image_tag(@product.image_url, size: "160x160")%>
+</div>
+
+<div class="field">
+  <%= @product.price %>
+</div>
+
+<%=link_to "Back", products_path%>
+

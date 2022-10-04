@@ -1,0 +1,33 @@
+<%=form_with(model: product) do |form|%>
+
+  <% if product.errors.any? %>
+    <ul>
+      <% product.errors.full_messages.each do |msg| %>
+        <li><%= msg  %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 10, cols: 60 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  
+  <%= form.submit %>
+
+<% end %>

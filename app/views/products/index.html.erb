@@ -1,0 +1,20 @@
+<%=flash[:notice]%>
+
+<h1>Product</h1>
+
+<%= link_to "Create" , new_product_path %>
+
+
+<ul>
+  <% @products.each do |product|%>
+    <li>
+      <%=product.title%>
+      |
+      <%= link_to "show",product_path(product.id)%>
+      |
+      <%= link_to "edit",edit_product_path(product.id)%> 
+      |
+      <%= link_to "delete",product_path(product.id), method: :delete, data:{confirm:"要刪除嗎？"}%>
+    </li>
+  <% end%>
+</ul>
