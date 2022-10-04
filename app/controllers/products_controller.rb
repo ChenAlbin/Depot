@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new    
+    @product = Product.new
   end
 
   def create
@@ -19,11 +19,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @product.update(product_params)
@@ -41,7 +39,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title,:description,:image_url,:price)    
+    params.require(:product).permit(:title ,:description ,:image_url ,:price)
   end
 
   def find_product
