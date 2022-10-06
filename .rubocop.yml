@@ -1,0 +1,37 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'db/fixtures/*'
+    - 'db/ishin/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'db/migrate/*'
+    - 'app/workers/*'
+    - 'scripts/**/*'
+    - 'lib/*_converter.rb' ## copy from ishin-server
+  DisplayCopNames: true
+Style/Documentation:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/tasks/*'
+    - 'db/**/*schema.rb'
+    - 'config/**/*'
+#Frozen string will cause CVS force_encoding('utf-8') error
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'spec/services/extract_budokai_top_cheat_user_service_spec.rb'
+
+# Commonly used screens these days easily fit more than 120 characters.
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*'
+  Max: 120
+# Cause idiom detect when using expect ... not_to change ... matcher
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
